@@ -31,8 +31,9 @@ function InstructorDashboard() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
         const { data } = await api.get(
-          "http://localhost:3000/instructor/courses",
+          `${API_URL}/instructor/courses`,
         );
         setCourses(data.courses);
         setStats(data.stats);
@@ -86,7 +87,8 @@ function InstructorDashboard() {
     setDeletingId(courseId);
 
     try {
-      await api.delete(`http://localhost:3000/instructor/courses/${courseId}`);
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      await api.delete(`${API_URL}/instructor/courses/${courseId}`);
 
       setCourses((prev) => prev.filter((course) => course._id !== courseId));
 

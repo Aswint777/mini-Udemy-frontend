@@ -41,7 +41,8 @@ export const userSignUp = createAsyncThunk<
   { rejectValue: string }
 >("user/signUp", async (userData, { rejectWithValue }) => {
   try {
-    const response = await fetch("http://localhost:3000/userSignUpPost", {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    const response = await fetch(`${API_URL}/userSignUpPost`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
@@ -67,8 +68,9 @@ export const userLogin = createAsyncThunk<
   { rejectValue: string }
 >("user/login", async (userData, { rejectWithValue }) => {
   try {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
     const response = await axios.post(
-      "http://localhost:3000/userLoginPost",
+      `${API_URL}/userLoginPost`,
       userData,
       { withCredentials: true },
     );
@@ -99,8 +101,8 @@ export const checkAuth = createAsyncThunk(
     try {
       const token = localStorage.getItem("accessToken");
       
-
-      const response = await api.get("http://localhost:3000/checkAuth", {
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const response = await api.get(`${API_URL}/checkAuth`, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
