@@ -1,23 +1,12 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { useNavigate } from "react-router-dom";
-import { userLogout } from "../redux/userSlice";
-import Navbar from "../utility/Navbar";
+import BaseNavbar from "../utility/BaseNavbar";
 
-function Home() {
-  const { user } = useAppSelector((state) => state.user);
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    await dispatch(userLogout());
-    navigate("/login");
-  };
+function LandingPage() {
 
   return (
     <div>
-      <Navbar />
-
+      <BaseNavbar/>
       <div className="min-h-screen bg-gradient-to-r from-blue-600 to-teal-400 text-white">
         <div className="flex flex-col md:flex-row items-center justify-between px-10 py-16">
           <div className="max-w-lg">
@@ -65,12 +54,10 @@ function Home() {
           </div>
         </div>
 
-        <h1 className="text-center text-xl mt-6 text-white">
-          Welcome {user?.name} 👋
-        </h1>
+
       </div>
     </div>
   );
 }
 
-export default Home;
+export default LandingPage;

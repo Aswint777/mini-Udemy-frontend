@@ -19,6 +19,7 @@ import EnrollmentSuccess from "./pages/Student/EnrollmentSuccess";
 import MyLearning from "./pages/Student/MyLearning";
 import Certificate from "./pages/Student/Certificate";
 import About from "./pages/AboutPage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -31,7 +32,8 @@ function App() {
       {/* common routs */}
       <Routes>
         <Route element={<PublicRoute />}>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/otp-verify" element={<OtpVerify />} />
         </Route>

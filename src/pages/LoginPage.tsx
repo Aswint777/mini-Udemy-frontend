@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userLogin } from "../redux/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import BaseNavbar from "../utility/BaseNavbar";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -56,6 +57,8 @@ function LoginPage() {
 
   return (
     <div>
+      <BaseNavbar />
+
       <div className="min-h-screen flex items-center justify-center bg-blue-300">
         <div className=" max-w-md bg-white p-8 rounded-2xl ">
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">

@@ -23,7 +23,7 @@ function ProtectedRoute() {
 
   if (loading) return <h2>Checking authentication...</h2>;
 
-  return isAuth ? <Outlet /> : <Navigate to="/" replace />;
+  return isAuth ? <Outlet /> : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

@@ -34,7 +34,7 @@ function OtpVerify() {
         alert(data.message || "OTP verification failed");
         return;
       }
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.error(error);
       alert("Server error");

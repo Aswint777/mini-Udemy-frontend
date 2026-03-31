@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
+import BaseNavbar from "../utility/BaseNavbar";
 
 function SignUpPage() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ function SignUpPage() {
 
   return (
     <div>
+      <BaseNavbar />
       <div className="min-h-screen flex items-center justify-center bg-blue-300">
         <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-md">
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
@@ -116,7 +118,7 @@ function SignUpPage() {
             Already have an account?{" "}
             <span
               className="text-blue-600 cursor-pointer"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/login")}
             >
               Login
             </span>
