@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
 import BaseNavbar from "../utility/BaseNavbar";

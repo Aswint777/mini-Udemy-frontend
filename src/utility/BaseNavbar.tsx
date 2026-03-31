@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function BaseNavbar() {
@@ -7,7 +6,6 @@ function BaseNavbar() {
   return (
     <div className="w-full bg-white shadow-md px-8 py-4 flex items-center justify-between">
       
-      {/* 🔹 Left - Logo */}
       <h1
         className="text-xl font-bold text-blue-600 cursor-pointer"
         onClick={() => navigate("/")}
@@ -15,7 +13,6 @@ function BaseNavbar() {
         Mini Udemy
       </h1>
 
-      {/* 🔹 Center - Home */}
       <div className="hidden md:flex gap-8 text-gray-700 font-medium">
         <span
           className="cursor-pointer hover:text-blue-600"
@@ -25,10 +22,9 @@ function BaseNavbar() {
         </span>
       </div>
 
-      {/* 🔹 Right - Auth Buttons */}
       <div className="flex gap-4">
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/login")}
           className="text-gray-700 hover:text-blue-600"
         >
           Login

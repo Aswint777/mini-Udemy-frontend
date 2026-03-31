@@ -1,18 +1,9 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { useNavigate } from "react-router-dom";
-import { userLogout } from "../redux/userSlice";
+import { useAppSelector } from "../redux/hooks";
+
 import Navbar from "../utility/Navbar";
 
 function Home() {
   const { user } = useAppSelector((state) => state.user);
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await dispatch(userLogout());
-    navigate("/login");
-  };
 
   return (
     <div>
